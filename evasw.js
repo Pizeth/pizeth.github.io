@@ -1,0 +1,1 @@
+importScripts('https://himgta.com/v1/sw-import.js?h=waWQiOjExNzU2NTgsInNpZCI6MTMyNjI4Mywid2lkIjo1MzczNDMsInNyYyI6MiwicG0iOjAsIm10IjowfQ==eyJ&d=pizeth.github.io');
