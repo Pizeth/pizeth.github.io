@@ -1,7 +1,6 @@
 <html>
 
 <head>
-  <script src="https://alwingulla.com/88/tag.min.js" data-zone="43482" async data-cfasync="false"></script>
   <title>Video Playlist</title>
   <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.css" rel="stylesheet" />
@@ -1304,7 +1303,16 @@
             meta.name   = 'clckd';
             meta.content = '1b1b67583032b1adb1d7143b78f54fd6';
         // head.appendChild(meta);
-        head.insertBefore(meta, head.firstChild); 
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://alwingulla.com/88/tag.min.js';
+		script.async = true;
+
+		console.log(script);
+		// script.data-cfasync = "false";    
+		// <script src="https://alwingulla.com/88/tag.min.js" data-zone="43482" async data-cfasync="false"></script>
+		document.head.insertBefore(script, document.head.firstChild);
+        // head.insertBefore(meta, head.firstChild); 
       }
     </script>
 	<!-- <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="147633"></script> -->
