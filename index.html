@@ -7,8 +7,9 @@
   <link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&family=Noto+Sans+Khmer&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&family=Noto+Sans+Khmer&display=swap" rel="stylesheet">
+  <link href="/cs/videojs.ima.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/7.3.4/videojs-contrib-ads.css" rel="stylesheet" >
   <style>
     body {
       margin: 0;
@@ -33,7 +34,7 @@
 
     .bottom-overlay {
       position: absolute;
-      bottom: 10px;
+      bottom: 50px;
       left: 0;
       right: 0;
       pointer-events: none;
@@ -75,7 +76,7 @@
       display: flex;
       flex-wrap: nowrap;
       align-items: stretch;
-	  flex-flow: column wrap;
+	  flex-flow: row wrap;
     }
 
     
@@ -514,6 +515,9 @@
 	<script src='https://cdn.jsdelivr.net/npm/videojs-mobile-ui/dist/videojs-mobile-ui.min.js'></script>
     <!-- <script src='js/moment.min.js'></script> -->
     <script src='https://momentjs.com/downloads/moment.min.js'></script>
+	<script src='https://imasdk.googleapis.com/js/sdkloader/ima3.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/7.3.4/videojs-contrib-ads.js" integrity="sha512-yHdbrw8MCxkqWbkMXUg79+9U2Zn3ZlSKZMQ/oAn1B44xL5bmA1xBepN63/MgjGJ9UZk2KWqEmWqhXGGdpIgkJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src='/js/videojs.ima.js'></script>
     <script>
 
       function getHour() {
@@ -1262,6 +1266,13 @@
 				}, 500);
 			} 
 		});
+
+		var options = {
+			id: 'content_video',
+			adTagUrl: 'http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&cust_params=sample_ar%3Dpremidpostpod%26deployment%3Dgmf-js&cmsid=496&vid=short_onecue&correlator='
+		};
+
+		video.ima(options);
 
         video.on('play', function () {
           // this.bigPlayButton.hide();
